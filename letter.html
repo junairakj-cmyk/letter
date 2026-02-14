@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Love Letter 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+}
+
+.letter {
+    width: 100vw;
+    height: 100vh;
+    padding: 60px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+     /* important */
+    overflow-y: auto;     /* important */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    color: #e91e63;
+}
+
+#text {
+    font-size: 16px;
+    line-height: 1.8;
+    white-space: pre-line;
+    color: #333;
+}
+
+.signature {
+    margin-top: 20px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    color: #e91e63;
+}
+
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="letter">
+    <h1>My Love 💖</h1>
+    <div id="text"></div>
+    <div class="signature">Always yours, In shā’ Allāh ❤️</div>
+
+</div>
+
+<script>
+const letterText = `
+Hey love patti,
+
+This is a love letter just for you from your girl—
+because even though I couldn’t send you a physical card,
+I still wanted you to feel how deeply special you are to me.
+
+From the day I met you, I have been completely blank in the most beautiful way.
+You know it already—my mind, my heart, even my act seemed to rush toward you.
+Every moment after you arrived there, all I wanted was to see you again and again.
+
+You made me believe that love at first sight is real.
+and now,i truly believe in that.
+
+We met in a very special place,
+and once again, we got connected in the same place just as beautiful.
+In shā’ Allāh, I sincerely pray that this bond lasts forever and ever.
+
+I hope I am able to love you tomorrow the same way I love you today.
+I pray that this longing, this urgency to love you, never fades.
+I wish to crave you, to choose you, until my very last breath.
+
+I feel so cravy,Being this romantic for my beautifully unromantic boy.
+I hope you feel it.
+And I pray that Allāh brings us together,and everyone makes us together happily.
+so that we may live a life filled with love, peace, and happiness.
+
+
+I LOVE YOU SIMAK.
+`;
+
+let i = 0;
+const speed = 70;
+const textElement = document.getElementById("text");
+
+function typeLetter() {
+    if (i < letterText.length) {
+        textElement.innerHTML += letterText.charAt(i);
+        i++;
+
+        // Auto scroll down smoothly
+        const letterBox = document.querySelector(".letter");
+        letterBox.scrollTop = letterBox.scrollHeight;
+
+        setTimeout(typeLetter, speed);
+    }
+}
+
+typeLetter();
+
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}, 500);
+</script>
+
+</body>
+</html>
